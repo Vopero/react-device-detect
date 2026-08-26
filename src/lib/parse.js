@@ -1,4 +1,4 @@
-const UAParser = require('ua-parser-js/dist/ua-parser.min');
+const UAParser = require('ua-parser-js');
 
 export const ClientUAInstance = new UAParser();
 

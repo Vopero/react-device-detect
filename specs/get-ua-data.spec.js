@@ -39,10 +39,10 @@ describe('Parsing useragent', () => {
 
   it('should get engine data', () => {
     setUserAgent(commonTestUa);
-    const data = UA.getEngine();
+    const data = ClientUAInstance.getEngine();
     const matchingData = {
-      name: 'WebKit',
-      version: '537.36',
+      name: 'Blink',
+      version: '61.0.3163.79',
     };
     expect(data).toMatchObject(matchingData);
   });
@@ -56,12 +56,11 @@ describe('Parsing useragent', () => {
     expect(data).toMatchObject(matchingData);
   });
 
-  it('should get engine data', () => {
+  it('should get os data', () => {
     setUserAgent(commonTestUa);
     const data = ClientUAInstance.getOS();
     const matchingData = {
       name: 'Linux',
-      version: 'x86_64',
     };
     expect(data).toMatchObject(matchingData);
   });

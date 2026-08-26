@@ -29,7 +29,7 @@ export const OsTypes = {
   Android: 'Android',
   WindowsPhone: 'Windows Phone',
   Windows: 'Windows',
-  MAC_OS: 'Mac OS',
+  MAC_OS: 'macOS',
 };
 
 export const InitialDeviceTypes = {

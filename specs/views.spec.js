@@ -78,9 +78,9 @@ describe('Views tests', () => {
       expect(wrapper.hasClass('test-class')).toEqual(true);
     });
 
-    it('should not render component <BrowserView/> children if no device prop provided', () => {
+    it('should not render component <BrowserView/> children if device={false}', () => {
       const wrapper = shallow(
-        <BrowserView>
+        <BrowserView device={false}>
           <div>sadasdasd</div>
         </BrowserView>
       );

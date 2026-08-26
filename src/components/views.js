@@ -13,72 +13,79 @@ import {
   isTablet,
 } from '../lib/selectors';
 
-export const AndroidView = ({ renderWithFragment, children, ...props }) => {
-  return isAndroid ? (
+export const AndroidView = ({ renderWithFragment, children, device, viewClassName, className, ...props }) => {
+  const show = device !== undefined ? device : isAndroid;
+  return show ? (
     renderWithFragment ? (
       <Fragment>{children}</Fragment>
     ) : (
-      <div {...props}>{children}</div>
+      <div className={viewClassName || className} {...props}>{children}</div>
     )
   ) : null;
 };
 
-export const BrowserView = ({ renderWithFragment, children, ...props }) => {
-  return isBrowser ? (
+export const BrowserView = ({ renderWithFragment, children, device, viewClassName, className, ...props }) => {
+  const show = device !== undefined ? device : isBrowser;
+  return show ? (
     renderWithFragment ? (
       <Fragment>{children}</Fragment>
     ) : (
-      <div {...props}>{children}</div>
+      <div className={viewClassName || className} {...props}>{children}</div>
     )
   ) : null;
 };
 
-export const IEView = ({ renderWithFragment, children, ...props }) => {
-  return isIE ? (
+export const IEView = ({ renderWithFragment, children, device, viewClassName, className, ...props }) => {
+  const show = device !== undefined ? device : isIE;
+  return show ? (
     renderWithFragment ? (
       <Fragment>{children}</Fragment>
     ) : (
-      <div {...props}>{children}</div>
+      <div className={viewClassName || className} {...props}>{children}</div>
     )
   ) : null;
 };
 
-export const IOSView = ({ renderWithFragment, children, ...props }) => {
-  return isIOS ? (
+export const IOSView = ({ renderWithFragment, children, device, viewClassName, className, ...props }) => {
+  const show = device !== undefined ? device : isIOS;
+  return show ? (
     renderWithFragment ? (
       <Fragment>{children}</Fragment>
     ) : (
-      <div {...props}>{children}</div>
+      <div className={viewClassName || className} {...props}>{children}</div>
     )
   ) : null;
 };
 
-export const MobileView = ({ renderWithFragment, children, ...props }) => {
-  return isMobile ? (
+export const MobileView = ({ renderWithFragment, children, device, viewClassName, className, ...props }) => {
+  const show = device !== undefined ? device : isMobile;
+  return show ? (
     renderWithFragment ? (
       <Fragment>{children}</Fragment>
     ) : (
-      <div {...props}>{children}</div>
+      <div className={viewClassName || className} {...props}>{children}</div>
     )
   ) : null;
 };
 
-export const TabletView = ({ renderWithFragment, children, ...props }) => {
-  return isTablet ? (
+export const TabletView = ({ renderWithFragment, children, device, viewClassName, className, ...props }) => {
+  const show = device !== undefined ? device : isTablet;
+  return show ? (
     renderWithFragment ? (
       <Fragment>{children}</Fragment>
     ) : (
-      <div {...props}>{children}</div>
+      <div className={viewClassName || className} {...props}>{children}</div>
     )
   ) : null;
 };
 
-export const WinPhoneView = ({ renderWithFragment, children, ...props }) => {
-  return isWinPhone ? (
+export const WinPhoneView = ({ renderWithFragment, children, device, viewClassName, className, ...props }) => {
+  const show = device !== undefined ? device : isWinPhone;
+  return show ? (
     renderWithFragment ? (
       <Fragment>{children}</Fragment>
     ) : (
-      <div {...props}>{children}</div>
+      <div className={viewClassName || className} {...props}>{children}</div>
     )
   ) : null;
 };

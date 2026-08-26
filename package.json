@@ -35,6 +35,7 @@
     "prepare": "npm run build"
   },
   "jest": {
+    "testEnvironment": "jsdom",
     "setupFiles": [
       "./.jestSetup.js"
     ],
@@ -62,6 +63,6 @@
     "rollup-plugin-node-resolve": "^5.2.0"
   },
   "dependencies": {
-    "ua-parser-js": "^1.0.33"
+    "ua-parser-js": "2.0.10"
   }
 }
